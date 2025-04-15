@@ -1,0 +1,30 @@
+# This is passed to Manager class.
+max_evals: 100 # Solutions to evaluate before termination (multiple evals per solution for metric aggregation is considered as one eval when ensuring max_evals).
+plot_metrics_freq: 1000 # Positive int `n` to plot metrics after `n` iterations. Always plots at the end.
+reload_save_freq: 1 # Positive int `n` to save reload data after `n` iterations. Always saved at the end.
+archive_save_freq: -1 # -1 to save the full archive at the end. 0 to never save the full archive. Positive int `n` to save it after `n` iterations.
+wandb:
+  enable: false # Set to true to enable wandb logging.
+  project_name: "planqd" # Project name on wandb.
+  entity: emhat # If we have a team, its name should be added here.
+  tags: [] # The names of QD algorithm, env, and agent are added as tags by default. Extra tags can be added here.
+
+agents: ${oc.dict.values:._agent_dict}
+_agent_dict:
+  a1: # This should match the <ID> in the defaults list
+    num: 1 # Number of agents of the type specified by <ID> in the defaults list
+  a2:
+    num: 1
+
+debug: true
+render: false
+
+defaults:
+  - _self_
+  - qd: planqd
+  - env: steakhouse
+  - model: llama_70b_sglang
+  - communication: with_communication
+
+  - agents@_agent_dict.a1.type: llm
+  - agents@_agent_dict.a2.type: llm

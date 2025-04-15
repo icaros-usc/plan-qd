@@ -1,0 +1,26 @@
+{
+    "grid":  """XXXPPXXXXXXXXXX
+                XO     D     XX
+                XX     U     WX
+                XX     D   2 XX
+                XD     U     GX
+                XX     UB    GX
+                XS 1   UB    MX
+                XS     UD    OX
+                XX           XX
+                XXXXXXXXXXXXXXX""",        
+    "start_all_orders" : [
+        { "ingredients" : ["meat"]},
+        { "ingredients" : ["chicken"]}
+    ],
+    "start_bonus_orders" : [],
+    "order_list": ['steak_dish','steak_onion_dish'],
+    "cook_time": 10,
+    "delivery_reward": 5,
+    "in_order_delivery_reward": 10,
+    "chicken_time": 100,
+    "steak_time": 80,
+    "rew_shaping_params": None,
+    "chicken_time": 10,
+    "wash_time": 3,
+}

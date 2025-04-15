@@ -1,0 +1,12 @@
+name: "diff_num_dish_served"
+base: "number of dishes served"
+range: [-5, 5] # range of the measure
+dim: 11 # dimensions of the measure
+type: "continuous" # select from 'continuous' or 'categorical'
+description:
+  pos: "The agent should prioritize spending more time serving dishes. By increasing the agent's focus on delivering prepared dishes to customers, the overall efficiency of food service will significantly improve. The agent's behavior should be adjusted to allocate more time and resources to this task, ensuring that dish serving becomes a higher priority than other activities."
+  neg: "The agent should not spend as much time serving dishes. The goal is for the agent to prioritize other tasks over dish delivery, such as preparing food or cleaning. By reducing the agent's focus on serving dishes, the overall efficiency of food service may decrease. The agent's behavior should be adjusted to allocate less time and resources to this task, ensuring that dish serving becomes a lower priority than other activities."
+
+strategy:
+  pos: Alice will pick up and clean more dirty plates
+  neg: Bob will pick up and clean more dirty plates

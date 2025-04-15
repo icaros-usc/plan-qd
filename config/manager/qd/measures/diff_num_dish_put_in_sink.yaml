@@ -1,0 +1,12 @@
+name: "diff_num_dish_put_in_sink"
+base: "number of dirty dishes put in the sink"
+range: [-5, 5]
+dim: 11
+type: "continuous"
+description:
+  pos: "The agent should prioritize spending more time putting dirty dishes in the sink. By increasing the agent's focus on putting dirty dishes in the sink, the overall quantity of dishes that can be cleaned will significantly increase. The agent's behavior should be adjusted to allocate more time and resources to this task, ensuring that putting dirty dishes in the sink becomes a higher priority than other activities. The ultimate goal is to maximize the number of dirty dishes cleaned by ensuring a consistent and ample supply of dishes at the cleaning station."
+  neg: "The agent should not spend too much time putting dirty dishes in the sink. By reducing the agent's focus on this task, the agent can allocate more time and resources to other important activities. The goal is to maintain a balance between putting dirty dishes in the sink and other tasks, ensuring that the agent's overall efficiency and productivity are optimized."
+
+strategy:
+  pos: Alice will put more dirty plates in the sink
+  neg: Bob will put more dirty plates in the sink

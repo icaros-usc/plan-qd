@@ -1,0 +1,22 @@
+{
+    "grid":  """XXXXXXXXXXXX
+                XXXMXXXXXGXX
+                XD1  XX2  WX
+                XX   X    XX
+                XO   XB   XX
+                XX    X   XX
+                XX   XX   XX
+                XX   XX   XX
+                XX        XX
+                XXXXSXXSXXXX""",
+    "start_all_orders" : [
+        { "ingredients" : ["meat"]},
+    ],
+    "order_list": ['steak_dish','steak_onion_dish'],
+    "cook_time": 10,
+    "delivery_reward": 5,
+    "in_order_delivery_reward": 10,
+    "chicken_time": 100,
+    "steak_time": 10,
+    "rew_shaping_params": None,
+}

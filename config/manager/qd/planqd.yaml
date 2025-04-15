@@ -1,0 +1,42 @@
+archive:
+  _target_: src.qd.archives.GridArchive
+  dtype:
+    solution: "${get_cls: numpy.dtypes.StrDType}"
+    objective: "${get_cls: numpy.float32}"
+    measures: "${get_cls: numpy.float32}"
+  record_solution: true
+  record_metadata: true
+
+result_archive:
+  _target_: "${..archive._target_}"
+  dtype:
+    solution: "${get_cls: numpy.dtypes.StrDType}"
+    objective: "${get_cls: numpy.float32}"
+    measures: "${get_cls: numpy.float32}"
+  record_solution: true
+  record_metadata: true
+
+emitters: ${oc.dict.values:._emitter_dict}
+_emitter_dict:
+  e1:
+    num: 1
+    batch_size: 4
+
+measures: ${oc.dict.values:._measure_dict}
+
+scheduler:
+  _target_: src.qd.schedulers.llm_scheduler.LLMScheduler
+
+mutation_cfg:
+  mutation_type: ["personality"]
+  static: 0
+
+defaults:
+  - emitters@_emitter_dict.e1.type: directional_emitter
+  - x0: x0
+  - /manager/model@scheduler.model: llama_70b_sglang
+  - _self_
+
+  - measures@_measure_dict.m1: diff_num_meat_picked
+  - measures@_measure_dict.m2: diff_num_dirty_dish_picked
+  - measures@_measure_dict.m3: diff_num_onion_chopped

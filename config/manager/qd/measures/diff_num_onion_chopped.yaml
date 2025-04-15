@@ -1,0 +1,12 @@
+name: "diff_num_onion_chopped"
+base: "number of onions chopped"
+range: [-5, 5]
+dim: 11
+type: "continuous"
+description:
+  pos: "The agent should prioritize spending more time chopping onions on the chopping board. By increasing the agent's focus on chopping onions, more steak onion dishes can be created"
+  neg: "The agent should not spend as much time chopping onions on the chopping board. By reducing the agent's focus on chopping onions, they can allocate more time to other tasks."
+
+strategy:
+  pos: Alice will pick up more onions
+  neg: Bob will pick up more onions

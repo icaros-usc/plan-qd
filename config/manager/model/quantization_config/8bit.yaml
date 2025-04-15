@@ -1,0 +1,5 @@
+load_in_8bit: true
+llm_int8_threshold: 2.0
+llm_int8_skip_modules: null
+llm_int8_enable_fp32_cpu_offload: false
+llm_int8_has_fp16_weight: false

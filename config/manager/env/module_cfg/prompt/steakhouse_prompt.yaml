@@ -1,0 +1,73 @@
+# strategy modified from here
+# https://github.com/eric-ai-lab/llm_coordination/blob/master/src/llm_coordination_agents/overcooked_agent.py
+
+context: |
+  ***Context:***
+  You are {agent_name}. {other_agents_description}. Environment Details: {environment_description}
+
+goal: |
+  ***Your goal:***
+  Your objective is to deliver all the dishes from the order list as quickly as possible. Delivering dishes in the correct order of the order list gives $100, and out of order gives $20.
+
+format: ""
+
+rules: |
+  The game has the following dishes: steak dish, steak onion dish. The agents are provided with the current and next order required to make. Ingredients for these dishes are obtained from dispensers. 
+
+  The steak dish requires 2 items: 1 cooked meat (steak) and 1 clean plate.
+  The steak onion dish requires 3 items: 1 cooked meat (steak), 1 chopped onion, and 1 clean plate.
+
+  To make a steak, a raw meat from a raw meat dispenser must be taken and placed on a grill. Once the steak is placed on a grill, it will start cooking. The cooking takes {steak_cook_time} timesteps. The cooked steak can only be picked up and moved with a clean plate. The meat cannot be picked up while it is cooking.
+  
+  To obtain a clean plate, you must obtain a dirty plate from a dirty plate dispenser and put it in a sink. Next, the dirty plate must be rinsed 3 times in a sink before it can be taken out as a clean plate. This takes 3 timesteps.
+
+  To chop an onion, an agent must grab an onion from a onion dispenser, and then take the onion to a chopping board. Then, the onion must be chopped 2 times to turn it into a chopped onion garnish. This takes 2 timesteps.
+
+  To add the chopped onion garnish onto the steak dish to make the steak onion dish, an agent must take a steak dish to a chopping board with an already chopped onion and add the chopped onion garnish to the top of the steak dish. Once the onion is put on the chopping board, it cannot be picked up without a steak dish. The chopped onion garnish can not be picked up with empty hands.
+  
+  Only one person can use the chopping board, add chopped onion garnish to a dish, or clean a dirty plate at a time. Furthermore, only one plate can be in the sink at a time and only one meat can be cooked on the grill at a time. Agents can only carry 1 item at a time.
+  
+  Counters can either be used to put an item down while you do something else or to put an item down to give to others.
+
+  After the dish is complete, it must be delivered to a delivery location. 
+
+  Agents can only do one action at a time. Multiple agents can not work on the same action (for example, multiple agents cannot pick up steak from the grill with a clean plate). You can not help the other agent do their tasks, like rinsing plates or chopping onions. Only one agent can pick up the steak from a grill with a clean plate. Only one agent can assemble the dish.
+
+  Agents do not know what you are doing, and only know where you are and what you are holding. Similarly, you only have information about where other agents are and what they are holding.
+
+  Actions are not instantaneous. It takes 1 timestep to travel 1 unit, and each action takes 1 timestep.
+
+state: |
+  <Inventory>: {inventory}
+
+  <Environment Details>: {kitchen_items}
+
+  {location_info}
+
+  <Order List>: {order_list}
+
+  <Action History (Last is most recent)>: {action_history}
+
+messages: [
+  ["system", [
+    ["ref", "personality"],
+  ]],
+  ["user", [
+    ["ref", "context"],
+    ["ref", "environment"],
+    ["text", "Overcooked has the following rules:"],
+    ["text", "---"],
+    ["ref", "rules"],
+    ["text", "---"],
+    ["ref", "goal"],
+  ]],
+  ["assistant", [
+    ["text", "Got it!"],
+  ]],
+  ["user", [
+    ["ref", "state"],
+    ["ref", "timer"],
+    ["ref", "actions"],
+    ["ref", "format"],
+  ]],
+]

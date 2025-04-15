@@ -1,0 +1,24 @@
+{
+    "grid":  """XXXXXXXXXXXXXXX
+                X      X      X
+                X      C      X
+                X      W      X
+                XX  X         X
+                XX XMXXXMBM XOX
+                X      D  1   X
+                X      G   W  X
+                X 2    C      X
+                XXXXDXXXXXPXSXX""",        
+    "start_all_orders" : [
+        { "ingredients" : ["meat","onion"]},
+        { "ingredients" : ["chicken"]},
+        { "ingredients" : ["meat"]},
+        { "ingredients" : ["chicken","onion"]}
+    ],
+    "order_list": ['steak_dish', 'boiled_chicken_dish','steak_onion_dish','boiled_chicken_onion_dish'],
+    "order_display_list": ['steak_dish', 'boiled_chicken_dish','steak_onion_dish','boiled_chicken_onion_dish'],
+    "cook_time": 10,
+    "delivery_reward": 20,
+    "rew_shaping_params": None,
+}
+

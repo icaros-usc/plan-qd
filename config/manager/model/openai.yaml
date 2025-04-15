@@ -1,0 +1,3 @@
+_target_: src.model.openai.OpenAIClient
+model_name: "gpt-4o" # model name (see https://platform.openai.com/docs/models)
+key: "OPENAI_API_KEY" # alternatively, set in env

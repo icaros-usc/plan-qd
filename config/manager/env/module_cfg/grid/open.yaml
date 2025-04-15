@@ -1,0 +1,37 @@
+# rough description: open space, both agents start in the center
+
+grid:
+  [
+    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "X", "X", "X", "M", "X", "X", "X", "X"],
+    ["X", "D", " ", " ", " ", " ", " ", " ", "W", "X"],
+    ["X", "X", " ", " ", " ", " ", " ", " ", "X", "X"],
+    ["X", "X", " ", " ", "1", "2", " ", " ", "X", "X"],
+    ["X", "X", " ", " ", " ", " ", " ", " ", "O", "X"],
+    ["X", "G", " ", " ", " ", " ", " ", " ", "X", "X"],
+    ["X", "X", "X", "B", "X", "X", "X", "S", "X", "X"],
+  ]
+
+description: "There is 1 meat dispenser, 1 onion dispenser, 1 dirty plate dispenser, 1 sink, 1 grill, and 1 delivery area. Additionally, there are many kitchen counters nearby that can be used to store items while you do something else."
+
+description_advanced: |
+  The kitchen is a grid world with 1 raw meat dispenser, 1 onion dispenser, 1 dirty plate dispenser, 1 sink, 1 grill, and 1 chopping board distributed evenly around the grid.
+  
+  Additionally, there are many general counters in the kitchen that can be used to store items while you do something else.
+
+shared_counter_locations: []
+
+location_info:
+  [
+    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "X", "X", "X", "M", "X", "X", "X", "X"],
+    ["X", "D", "1", "1", "1", "1", "1", "1", "W", "X"],
+    ["X", "D", "1", "1", "1", "1", "1", "1", "W", "X"],
+    ["X", "D", "1", "1", "1", "1", "1", "1", "W", "X"],
+    ["X", "D", "1", "1", "1", "1", "1", "1", "W", "X"],
+    ["X", "D", "1", "1", "1", "1", "1", "1", "W", "X"],
+    ["X", "X", "X", "B", "X", "X", "X", "S", "X", "X"],
+  ]
+
+location_mapping:
+  "1": "kitchen"

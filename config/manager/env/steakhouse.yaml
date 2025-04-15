@@ -1,0 +1,44 @@
+# Config file for Steakhouse. Setup in a way to use hydra's instantiate().
+# Docs for parameters are in envs.steakhouse.steakhouse_manager.SteakhouseManager and
+# envs.steakhouse.steakhouse_module.SteakhouseModule
+_target_: src.envs.steakhouse.steakhouse_manager.SteakhouseManager
+n_evals: 4
+objective: "fitness" # specify the objective function
+module_cfg:
+  grid_world_config:
+    randomize_order_list: false
+    dynamic_order_list: true
+    start_all_orders:
+      [{ "ingredients": ["meat"] }, { "ingredients": ["meat", "onion"] }]
+    order_list: ["steak_dish", "steak_onion_dish"]
+    cook_time: 60
+    chicken_time: 60
+    steak_time: 60
+    delivery_reward: 20
+    in_order_delivery_reward: 100
+    rew_shaping_params: null
+    dynamic_orders: 
+    collision: True
+  # Steak MLAM config
+  mlam_config:
+    start_orientations: false
+    wait_allowed: false
+    counter_goals: []
+    counter_drop: []
+    counter_pickup: []
+    same_motion_goals: true
+  prompt_builder:
+    _target_: src.prompt.utils.SteakhousePrompt3
+    grid_layout: null # NOTE: filled in later
+  horizon: 500
+  max_requery_time: 5 # maximum amount of time before LLM is requeried
+  all_update_on_interact: False
+  chat_history_length: 2
+  discount_factor: 0.999
+aggregation_type: "median"
+inference_temperature: 1.1
+
+defaults:
+  - module_cfg/grid: hallway
+  - module_cfg/prompt: steakhouse_prompt
+  - _self_

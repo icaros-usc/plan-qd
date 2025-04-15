@@ -1,0 +1,42 @@
+# rough description: forced coordination, agent's each have a access to certain ingredients but must share to deliver the dishes
+
+grid:
+  [
+    ["X", "X", "X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "D", "X", "X", "X", "G", "X", "X"],
+    ["X", "X", " ", "X", "X", "X", " ", "X", "X"],
+    ["X", "O", " ", " ", "X", " ", " ", "X", "X"],
+    ["X", "X", " ", "1", "X", "2", " ", "X", "X"],
+    ["X", "X", " ", " ", "X", " ", " ", "B", "X"],
+    ["X", "M", " ", "W", "X", "X", " ", "X", "X"],
+    ["X", "X", "X", "X", "X", "X", "S", "X", "X"],
+  ]
+
+description: "There is 1 meat dispenser, 1 onion dispenser, 1 dirty plate dispenser, 1 sink, 1 grill, and 1 delivery area. Additionally, there are many kitchen counters nearby that can be used to store items while you do something else."
+
+description_advanced: |
+  There are two sections in the kitchen, a left section and a right section. Alice is in the left section, and Bob is in the right section. The two sections are blocked off such that neither person can access each other's section.
+
+  The left section contains 1 raw meat dispenser, 1 onion dispenser, 1 dirty plate dispenser, and 1 sink. The right section contains 1 grill, and 1 chopping board, and 1 delivery location.
+  
+  Additionally, there are many general counters in the kitchen. Most of the counters are general counters that can be used to store items while you do something else. General counters can only be accessed in the section that you are in. The other agent cannot access your general counters.
+
+  3 of the kitchen counters in the middle are shared counters. The shared counters can be used by the agents to share items or ingredients with each other from one section to another. The agents must work together and use the shared counters to fulfill the objective.
+
+shared_counter_locations: [[4, 3], [4, 4], [4, 5]]
+
+location_info:
+  [
+    ["X", "X", "X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "X", "X", "X", "X", "X", "X", "X"],
+    ["X", "D", "1", "X", "X", "X", "2", "W", "X"],
+    ["X", "X", "1", "1", "X", "2", "2", "X", "X"],
+    ["X", "O", "1", "1", "X", "2", "2", "X", "X"],
+    ["X", "X", "1", "1", "X", "2", "2", "B", "X"],
+    ["X", "G", "1", "X", "X", "X", "2", "X", "X"],
+    ["X", "X", "X", "X", "X", "X", "S", "X", "X"],
+  ]
+
+location_mapping:
+  "1": "left section"
+  "2": "right section"

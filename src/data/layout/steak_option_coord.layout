@@ -1,0 +1,23 @@
+{
+    "hud_data": {"all_orders": [{"ingredients": ["onion", "onion", "onion"]}]},
+    "grid":  """XXXXXXXXXXX
+                XXXXMXDXSXX
+                X    2    X
+                X XPXGXXX X
+                X   1     X
+                XXXOXBWXXXX""",
+    "start_all_orders" : [
+        { "ingredients" : ["meat","onion"]},
+        { "ingredients" : ["meat"]},
+    ],
+    "order_list": ['steak_dish','steak_onion_dish', 'steak_dish','steak_onion_dish'],
+    "order_display_list": ['steak_dish','steak_onion_dish', 'steak_dish','steak_onion_dish'],
+    "cook_time": 10,
+    "delivery_reward": 1,
+    "in_order_delivery_reward": 100,
+    "rew_shaping_params": None,
+    "steak_time": 10,
+    "chicken_time": 10,
+    "wash_time": 3,
+}
+

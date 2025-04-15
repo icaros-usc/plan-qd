@@ -1,0 +1,11 @@
+seed: 42 # Master seed for the experiment.
+
+# For proper config saving. See https://hydra.cc/docs/experimental/rerun/
+hydra:
+  callbacks:
+    save_job_info:
+      _target_: hydra.experimental.callbacks.PickleJobInfoCallback
+
+defaults:
+  - _self_
+  - manager: default # Manager config file. See manager/default.yaml.

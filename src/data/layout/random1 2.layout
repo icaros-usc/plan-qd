@@ -1,0 +1,19 @@
+
+{
+    "hud_data": {"all_orders": [{"ingredients": ["onion", "onion", "onion"]}]},
+    "grid":  """XXXPDXXXX
+                X       X
+                X       X
+                X       X
+                X  1 2  X
+                XXXOSOXXX""",
+    "start_all_orders" : [
+        { "ingredients" : ["onion", "onion", "onion"]},
+    ],
+    "onion_value" : 21,
+    "tomato_value" : 13,
+    "cook_time": 10,
+    "rew_shaping_params": None,
+    "score": 0
+}
+

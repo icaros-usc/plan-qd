@@ -1,0 +1,49 @@
+# rough description: steakhouse hallway, specific counters in the middle optional for sharing
+
+grid:
+  [
+    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "X", "M", "X", "X", "X", "X", "X", "G", "X", "X"],
+    ["X", "D", "1", " ", " ", "X", "X", " ", " ", "2", "W", "X"],
+    ["X", "X", " ", " ", " ", "X", " ", " ", " ", " ", "X", "X"],
+    ["X", "O", " ", " ", " ", "X", "B", " ", " ", " ", "X", "X"],
+    ["X", "X", " ", " ", " ", " ", "X", " ", " ", " ", "X", "X"],
+    ["X", "X", " ", " ", " ", "X", "X", " ", " ", " ", "X", "X"],
+    ["X", "X", " ", " ", " ", "X", "X", " ", " ", " ", "X", "X"],
+    ["X", "X", " ", " ", " ", " ", " ", " ", " ", " ", "X", "X"],
+    ["X", "X", "X", "X", "S", "X", "X", "S", "X", "X", "X", "X"],
+  ]
+
+description: "There is 1 raw meat dispenser, 1 onion dispenser, 1 dirty plate dispenser, 1 sink, 1 grill, and 2 delivery areas. Additionally, there are many kitchen counters nearby that can be used to store items while you do something else."
+
+description_advanced: |
+  The kitchen is a grid world with two sections. The two sections are connected through a small connecting hallway at the bottom of the grid that only one agent can go through at once.
+
+  In the section 1, there is 1 raw meat dispenser, 1 onion dispenser, and 1 dirty plate dispenser. In the section 2, there is 1 sink, 1 grill, and 1 chopping board. The connecting hallway has 2 delivery areas.
+
+  Additionally, there are many counters in the kitchen. Most of the counters are general counters that can be used to store items while you do something else. General counters can only be accessed in the section that you are in. The two sections are blocked off from each other by general counters.
+
+  Two of the kitchen counters in the middle are shared counters. The shared counters also divide section 1 from section 2 but are the only kitchen counters that can be accessed from both sections.
+
+shared_counter_locations: [[5, 3], [6, 5]] # manually specify shared counters
+
+location_info:
+  [
+    ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "X", "M", "X", "X", "X", "X", "X", "G", "X", "X"],
+    ["X", "D", "1", "1", "1", "X", "X", "3", "3", "3", "W", "X"],
+    ["X", "X", "1", "1", "1", "X", "5", "3", "3", "3", "X", "X"],
+    ["X", "O", "1", "1", "1", "X", "B", "3", "3", "3", "X", "X"],
+    ["X", "X", "1", "1", "1", "4", "X", "3", "3", "3", "X", "X"],
+    ["X", "X", "1", "1", "1", "X", "X", "3", "3", "3", "X", "X"],
+    ["X", "X", "1", "1", "1", "X", "X", "3", "3", "3", "X", "X"],
+    ["X", "X", "1", "1", "2", "2", "2", "2", "3", "3", "X", "X"],
+    ["X", "X", "X", "X", "S", "X", "X", "S", "X", "X", "X", "X"],
+  ]
+
+location_mapping:
+  "1": "section 1"
+  "2": "connecting hallway"
+  "3": "section 2"
+  "4": "section 1"
+  "5": "section 2"

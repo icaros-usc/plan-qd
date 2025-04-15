@@ -1,0 +1,12 @@
+name: "diff_num_meat_put_on_grill"
+base: "number of meat put on grill"
+range: [-5, 5] # range of the measure
+dim: 11 # dimensions of the measure
+type: "continuous" # select from 'continuous' or 'categorical'
+description:
+  pos: "The agent should prioritize spending more time retrieving meat from the meat dispenser in order to optimize steak production. By increasing the agent's focus on picking up meat, the overall quantity of steaks that can be grilled will significantly increase. The agent's behavior should be adjusted to allocate more time and resources to this task, ensuring that meat collection becomes a higher priority than other activities. The ultimate goal is to maximize the number of steaks grilled by ensuring a consistent and ample supply of meat at the grill."
+  neg: "The agent should not spend as much time retrieving meat from the meat dispenser. The goal is for the agent to prioritize other tasks over meat collection, such as cleaning dishes or cutting onions. By reducing the agent's focus on picking up meat, the overall quantity of steaks that can be grilled will decrease. The agent's behavior should be adjusted to allocate less time and resources to this task, ensuring that meat collection becomes a lower priority than other activities. The ultimate goal is to minimize the number of steaks grilled by ensuring a limited supply of meat at the grill."
+
+strategy:
+  pos: Alice will pick up more meats and grill them
+  neg: Bob will pick up more meats and grill them

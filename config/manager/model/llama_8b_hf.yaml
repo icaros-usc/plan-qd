@@ -1,0 +1,5 @@
+_target_: src.model.huggingface.HuggingFace
+model_name: "meta-llama/Meta-Llama-3-8B-Instruct" # model name (see https://huggingface.co/models)
+
+defaults:
+  - quantization_config: 4bit

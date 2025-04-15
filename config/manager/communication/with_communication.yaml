@@ -1,0 +1,4 @@
+# sequential communication module
+communication: True
+random_start: True
+sequential: True

@@ -1,0 +1,12 @@
+_target_: src.envs.steakhouse.agents.llm_agent.LLMAgent
+# Get MLAM config from ../env/steakhouse.yaml. Note that the below config will be
+# manager._agent_dict.<ID>.type.mlam_config, so need to go back 4 levels to get the `env`
+# key
+mlam_config: "${....env.module_cfg.mlam_config}"
+# Prompt layouts are stored in ../env/module_cfg/prompt. See steakhouse.yaml for config
+prompt: "${....env.module_cfg.prompt}"
+memory_depth: 2 # 0 means no memory is used
+auto_unstuck: "original" # "original": original random movements; "none": no auto_unstuck
+
+defaults:
+  - _self_

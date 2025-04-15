@@ -1,0 +1,12 @@
+name: "diff_num_dirty_dish_picked"
+base: "number of dirty dishes picked up"
+range: [-5, 5] # range of the measure
+dim: 11 # dimensions of the measure
+type: "continuous" # select from 'continuous' or 'categorical'
+description:
+  pos: "The agent should prioritize spending more time retrieving dishes from the dish dispenser. By increasing the agent's focus on picking up dishes, the overall quantity of dishes that can be cleaned will significantly increase. The agent's behavior should be adjusted to allocate more time and resources to this task, ensuring that dish collection becomes a higher priority than other activities."
+  neg: "The agent should not spend as much time retrieving dishes from the dish dispenser. The goal is for the agent to prioritize other tasks over dish collection, such as cleaning dishes or cutting onions. By reducing the agent's focus on picking up dishes, the overall quantity of dishes that can be cleaned will decrease. The agent's behavior should be adjusted to allocate less time and resources to this task, ensuring that dish collection becomes a lower priority than other activities."
+
+strategy:
+  pos: Alice will pick up and clean more dirty plates
+  neg: Bob will pick up and clean more dirty plates

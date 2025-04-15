@@ -1,0 +1,40 @@
+# rough description: steakhouse hallway, both agents start in top right. Specific counters in the middle *optional* for sharing
+
+grid:
+  [
+    ["X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "M", "X", "B", "X", "X"],
+    ["X", " ", "1", " ", "2", " ", "W"],
+    ["D", " ", "X", "X", "X", " ", "X"],
+    ["S", " ", " ", " ", " ", " ", "X"],
+    ["X", "X", "G", "X", "O", "X", "X"],
+    ["X", "X", "X", "X", "X", "X", "X"],
+  ]
+
+description: "There is 1 raw meat dispenser, 1 onion dispenser, 1 dirty plate dispenser, 1 sink, 1 grill, and 2 delivery areas. Additionally, there are many kitchen counters nearby that can be used to store items while you do something else."
+
+description_advanced: |
+  The kitchen is a ring with a center island in the middle. The island splits the kitchen into the top and bottom sections, but agents can walk around the ring to get to either side.
+
+  The top of the ring contains the meat dispenser and chopping board. The bottom of the ring contains the onion dispenser and grill. There is also a dirty plate dispenser, sink, and delivery area scattered around the kitchen.
+
+  Additionally, there are many counters in the kitchen. Most of the counters are general counters that can be used to store items while you do something else. General counters can only be accessed in the section that you are in.
+
+  Three of the kitchen counters in the center island are shared counters. The shared counters can be used to share items across the top and bottom of the ring.
+
+shared_counter_locations: [[2, 3], [3, 3], [4, 3]] # manually specify shared counters
+
+location_info:
+  [
+    ["X", "X", "X", "X", "X", "X", "X"],
+    ["X", "X", "M", "X", "B", "X", "X"],
+    ["X", "1", "1", "1", "1", "1", "W"],
+    ["D", "1", "X", "X", "X", "2", "X"],
+    ["S", "2", "2", "2", "2", "2", "X"],
+    ["X", "X", "G", "X", "O", "X", "X"],
+    ["X", "X", "X", "X", "X", "X", "X"],
+  ]
+
+location_mapping:
+  "1": "top of the ring"
+  "2": "bottom of the ring"
